@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>SVPage-Blog</title>
+    <script src="https://code.jquery.com/jquery-2.2.2.js" integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <a href="test.php">test</a>
+    <script>
+        $.ajax({
+            url: 'test.php',
+            success: function(data) {
+                $('body').append(data);
+            },
+            error: function(data) {
+                $('body').append(data);
+            }
+        });
+    </script>
+</body>
+</html>
