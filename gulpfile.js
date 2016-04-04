@@ -23,20 +23,22 @@ var path = {
     html: './dist',
     js: './dist/assets/js',
     style: './dist/assets/css',
-    img: './dist/assets/img'
+    img: './dist/assets/img',
+    php: './dist/assets/php'
   },
   src: {
     html: './dev/html/*.html',
     js: './dev/js/*.js',
     style: './dev/sass/*.scss',
-    img: './dev/img/**/*'
+    img: './dev/img/**/*',
+    php: './dev/php/**/*.php'
   },
   watch: {
     html: './dev/html/**/*.html',
     js: './dev/js/**/*.js',
     style: './dev/sass/**/*.scss',
     img: './dev/img/**/*',
-    php: './dist/**/*.php'
+    php: './dev/php/**/*.php'
   }
 };
 
@@ -78,7 +80,6 @@ var config = {
   notify: false
 };
 
-
 gulp.task('webserver', function() {
   browserSync(config);
 });
@@ -91,6 +92,13 @@ gulp.task('html', function() {
     .pipe(reload({stream: true}));
 });
 
+//php
+gulp.task('php', function() {
+  gulp.src(path.src.php)
+    .pipe(gulp.dest(path.build.php))
+    .pipe(reload({stream: true}));
+});
+
 gulp.task('sass', function () {
   gulp.src(path.src.style)
     .pipe(sass().on('error', sass.logError))
@@ -100,11 +108,6 @@ gulp.task('sass', function () {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(path.build.style))
     .pipe(reload({stream: true})); // put minificid css
-});
-
-gulp.task('php', function () {
-  gulp.src(path.watch.php)
-    .pipe(reload({stream: true}));
 });
 
 gulp.task('notify', function () {
@@ -150,4 +153,4 @@ gulp.task('compress', function() {
     .pipe(reload({stream: true}));
 });
 
-gulp.task('default', ['sass', 'html', 'webserver', 'stream']);
+gulp.task('default', ['sass', 'html', 'php', 'webserver', 'stream']);

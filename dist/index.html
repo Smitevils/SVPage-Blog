@@ -7,24 +7,5 @@
 </head>
 <body>
     <a href="test.php">test</a>
-    <script>
-        $.ajax({
-            url: 'test.php',
-            statusCode: {
-                200: function() {
-                    $('body').append(200);
-                },
-                404: function() {
-                    $('body').append(404);
-                }
-            },
-            success: function(data) {
-                $('body').append(data);
-            },
-            error: function(data) {
-                $('body').append(data);
-            }
-        });
-    </script>
 </body>
 </html>
