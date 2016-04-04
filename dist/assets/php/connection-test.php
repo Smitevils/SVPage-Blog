@@ -16,6 +16,12 @@ if(!mysql_connect("$host", "$user", "$password")) {
     } else {
         //echo "База данных найдена";
         echo "access";
+        //
+        $source = "<?php\n \$host='".$host."';\n \$user='".$user."';\n \$password='".$password."';\n \$base='".$base."';\n ?>";
+        $file = "access-data.php";
+        $Saved_File = fopen($file, 'w+');
+        fwrite($Saved_File, $source);
+        fclose($Saved_File);
     }
 }
 

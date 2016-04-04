@@ -8,13 +8,13 @@
         <div class="greeting__title">
             <span>S</span><span>V</span><span>P</span><span>a</span><span>g</span><span>e</span><span>-</span><span>B</span><span>l</span><span>o</span><span>g</span>
         </div>
-        <div class="step step-1">
+        <div class="step step-1 opasity-zero">
             <div class="greeting__text">
                 Привет. Это простая CMS для вашего блога - "ЭсВиПэйдж - Блог".
             </div>
-            <div class="btn start-install">Старт</div>
+            <div class="btn to-step-2">Старт</div>
         </div>
-        <div class="step step-2">
+        <div class="step step-2 opasity-zero">
             <form action="">
                 <table class="install-data">
                 <tr>
@@ -51,15 +51,54 @@
                 </tr>
             </table>
             </form>
-            <div class="btn perform-install">Установить</div>
+            <div class="btn to-step-test">Установить</div>
         </div>
-        <div class="step step-test-success">
+        <div class="step step-test-success opasity-zero">
             <p>Сервер доступен. База данных найдена. Теперь вы можейте перейти к следующему этапу.</p>
-            <div class="btn perform-continue">продолжить</div>
+            <div class="btn to-step-3">продолжить</div>
         </div>
-        <div class="step step-test-denied">
+        <div class="step step-test-denied opasity-zero">
             <p>Что-то пошло не так. Попробуйте еще раз.</p>
-            <div class="btn back">вернуться</div>
+            <div class="btn back-to-step-2">вернуться</div>
+        </div>
+        <div class="step step-3 opasity-zero">
+            <form action="">
+                <table class="install-data">
+                    <tr>
+                        <td>
+                            <label for="">Имя администратора:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="adminName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Пароль:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="adminPassword">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Пароль повторно:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="adminPasswordAgain">
+                        </td>
+                    </tr>
+                </table>
+                <div class="btn end-install">закончить установку</div>
+            </form>
+        </div>
+        <div class="step step-finish-success opasity-zero">
+            <p>Вот и все! Установка завершена. Теперь вы можете перейти в панель администратора.</p>
+            <div class="btn">панель администратора</div>
+        </div>
+        <div class="step step-finish-denied opasity-zero">
+            <p>Что-то пошло не так. Попробуйте еще раз.</p>
+            <div class="btn back-to-step-3">вернуться</div>
         </div>
     </div>
 </body>

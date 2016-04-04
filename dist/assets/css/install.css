@@ -137,9 +137,7 @@ body {
 
 .greeting__text {
   padding: 0px 0 40px;
-  font-size: 18px;
-  -webkit-animation: showElement 6s;
-          animation: showElement 6s; }
+  font-size: 18px; }
 
 .btn {
   display: inline-block;
@@ -157,10 +155,6 @@ body {
   .btn:hover {
     background-color: #000;
     color: #fff; }
-
-.start-install {
-  -webkit-animation: showElement 9s;
-          animation: showElement 9s; }
 
 @-webkit-keyframes showElement {
   0% {
@@ -188,9 +182,6 @@ body {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s; }
 
-.step-2, .step-test-success, .step-test-denied {
-  opacity: 0; }
-
 table.install-data {
   margin: 0 auto;
   margin-bottom: 20px; }
@@ -204,3 +195,6 @@ input[type="text"] {
   border: 1px solid #000;
   padding: 5px 10px;
   outline: none; }
+
+.opasity-zero {
+  opacity: 0; }
