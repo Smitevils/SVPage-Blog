@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>SVPage-Blog</title>
+    <link rel="stylesheet" href="assets/css/normalize.css" rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.0/fonts/fontawesome-webfont.eot?v=4.0.0' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/install.min.css" rel='stylesheet' type='text/css'>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/install.min.js"></script>
+</head>
+<body>
+    <div class="greeting">
+        <div class="greeting__title">
+            <span>S</span><span>V</span><span>P</span><span>a</span><span>g</span><span>e</span><span>-</span><span>B</span><span>l</span><span>o</span><span>g</span>
+        </div>
+        <div class="step step-1">
+            <div class="greeting__text">
+                Привет. Это простая CMS для вашего блога - "ЭсВиПэйдж - Блог".
+            </div>
+            <div class="btn start-install">Старт</div>
+        </div>
+        <div class="step step-2">
+            <form action="">
+                <table class="install-data">
+                <tr>
+                    <td>
+                        <label for="">Хост:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="host" value="localhost">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Имя пользователя:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="user">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Пароль:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Имя базы данных:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="base">
+                    </td>
+                </tr>
+            </table>
+            </form>
+            <div class="btn perform-install">Установить</div>
+        </div>
+        <div class="step step-test-success">
+            <p>Сервер доступен. База данных найдена. Теперь вы можейте перейти к следующему этапу.</p>
+            <div class="btn perform-continue">продолжить</div>
+        </div>
+        <div class="step step-test-denied">
+            <p>Что-то пошло не так. Попробуйте еще раз.</p>
+            <div class="btn back">вернуться</div>
+        </div>
+    </div>
+</body>
+</html>

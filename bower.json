@@ -1,0 +1,25 @@
+{
+  "name": "svpage-blog",
+  "description": "you light personal blog",
+  "main": "gulpfile.js",
+  "authors": [
+    "Alexey <SmiteVils@yandex.ru>"
+  ],
+  "license": "GNU",
+  "homepage": "https://github.com/Smitevils/SVPage-Blog",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#^4.0.0",
+    "jquery": "2.2.2"
+  }
+}
