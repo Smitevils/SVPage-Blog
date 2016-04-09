@@ -8,11 +8,16 @@ $(document).ready(function() {
     })
 
     $(document).on('click', '.to-step-test', function(event) {
+        event.preventDefault();
         var parentForm = $(this).parents('form');
         if (validateFormInputs(parentForm)) {
             testConnection();
         }
     });
+    $("#connect-test").on("submit", function(){
+        event.preventDefault();
+        $(document).find('.to-step-test').click();
+    })
 
     $(document).on('click', '.to-step-3', function(event) {
         nextStep('.step-test-success', '.step-3', '500');
@@ -27,6 +32,14 @@ $(document).ready(function() {
         if (validateFormInputs(parentForm)) {
             installingBlog();
         }
+    })
+    $("#end-install").on("submit", function(){
+        event.preventDefault();
+        $(document).find('.end-install').click();
+    })
+
+    $(document).on('click', '.to-admin-panel', function(event) {
+        $(document).html("");
     })
 
     $(document).on('click', '.back-to-step-3', function(event) {
@@ -104,7 +117,7 @@ $(document).ready(function() {
         }
     }
 
-    $(document).on('focus', 'input', function(event) {
+    $(document).on('focus keyup', 'input', function(event) {
         var item = $(this);
         clearValidateMark(item);
     })

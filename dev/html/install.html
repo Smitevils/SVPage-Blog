@@ -15,7 +15,7 @@
             <div class="btn to-step-2">Старт</div>
         </div>
         <div class="step step-2 opasity-zero">
-            <form>
+            <form id="connect-test">
                 <p>Введите данные выданные провайдером</p>
                 <table class="install-data">
                     <tr>
@@ -51,7 +51,8 @@
                         </td>
                     </tr>
                 </table>
-                <div class="btn to-step-test">Установить</div>
+                <!-- <div class="btn to-step-test">Установить</div> -->
+                <input type="submit" class="btn to-step-test" value="Установить">
             </form>
         </div>
         <div class="step step-test-success opasity-zero">
@@ -64,7 +65,7 @@
         </div>
         <div class="step step-3 opasity-zero">
             <p>Придумайте логин и пароль</p>
-            <form>
+            <form id="end-install">
                 <table class="install-data">
                     <tr>
                         <td>
@@ -83,12 +84,13 @@
                         </td>
                     </tr>
                 </table>
-                <div class="btn end-install">закончить установку</div>
+                <!-- <div class="btn end-install">закончить установку</div> -->
+                <input type="submit" class="btn end-install" value="закончить установку">
             </form>
         </div>
         <div class="step step-finish-success opasity-zero">
             <p>Вот и все! Установка завершена. Теперь вы можете перейти в панель администратора.</p>
-            <div class="btn">панель администратора</div>
+            <div class="btn to-admin-panel">панель администратора</div>
         </div>
         <div class="step step-finish-denied opasity-zero">
             <p>Что-то пошло не так. Попробуйте еще раз.</p>
