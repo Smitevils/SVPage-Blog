@@ -8,7 +8,10 @@ $(document).ready(function() {
     })
 
     $(document).on('click', '.to-step-test', function(event) {
-        testConnection();
+        var parentForm = $(this).parents('form');
+        if (validateFormInputs(parentForm)) {
+            testConnection();
+        }
     });
 
     $(document).on('click', '.to-step-3', function(event) {
@@ -20,7 +23,10 @@ $(document).ready(function() {
     })
 
     $(document).on('click', '.end-install', function(event) {
-        installingBlog();
+        var parentForm = $(this).parents('form');
+        if (validateFormInputs(parentForm)) {
+            installingBlog();
+        }
     })
 
     $(document).on('click', '.back-to-step-3', function(event) {
@@ -76,5 +82,37 @@ $(document).ready(function() {
             }, speed);
         }, speed);
     }
+
+    /* == validation == */
+
+    function validateFormInputs(parentForm) {
+        var validateElements = parentForm.find('[data-validate-option]');
+        $.each(validateElements, function(index, value){
+            switch ($(this).data('validate-option')) {
+                case 0: // if input empty
+                    if ($(this).val() == "") {
+                        $(this).addClass('alert');
+                    }
+                    break;
+            }
+        });
+        if (parentForm.find('input').hasClass('alert')) {
+            console.log('Пожалуйста, заполните обязательные поля...')
+        } else {
+            console.log('Все обязательные поля заполнены...')
+            return true;
+        }
+    }
+
+    $(document).on('focus', 'input', function(event) {
+        var item = $(this);
+        clearValidateMark(item);
+    })
+
+    function clearValidateMark(item) {
+        item.removeClass('alert');
+    }
+
+    /* == validation == */
 
 });
