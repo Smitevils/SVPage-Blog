@@ -2,5 +2,5 @@
  $host='localhost';
  $user='root';
  $password='';
- $base='my_DB';
+ $base='my_db';
  ?>
