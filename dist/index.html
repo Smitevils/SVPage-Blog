@@ -7,6 +7,17 @@
     <script src="assets/js/jquery.min.js"></script>
 </head>
 <body>
-    test test test
+    <script>
+        $.ajax({
+            url: 'assets/php/session.php',
+            type: "POST",
+            data: {
+                adminName: 1
+            },
+            success: function(data) {
+                alert(data)
+            }
+        });
+    </script>
 </body>
 </html>
