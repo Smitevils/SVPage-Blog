@@ -16,6 +16,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
+    sourcemaps = require('gulp-sourcemaps'),
     del = require('del');
 
 var path = {
@@ -101,9 +102,16 @@ gulp.task('php', function() {
 
 gulp.task('sass', function () {
   gulp.src(path.src.style)
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest(path.build.style)) // put standart css
+    .pipe(reload({stream: true})); // put minificid css
+});
+
+gulp.task('sass:min', function () {
+  gulp.src('./dist/assets/css/*.css')
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(path.build.style))
