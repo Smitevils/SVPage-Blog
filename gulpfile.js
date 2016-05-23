@@ -28,7 +28,7 @@ var path = {
     php: './dist/assets/php'
   },
   src: {
-    html: './dev/html/*.html',
+    html: './dev/html/**/*.html',
     js: './dev/js/*.js',
     style: './dev/sass/**/*.scss',
     img: './dev/img/**/*',

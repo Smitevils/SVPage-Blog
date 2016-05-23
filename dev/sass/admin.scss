@@ -1,3 +1,4 @@
+@import "normalize";
 @import "vars/variables";
 @import "grid/grid";
 
@@ -110,5 +111,16 @@ body {
                 color: $color_white;
             }
         }
+    }
+}
+
+.table-articles {
+    border: 2px solid #666;
+    border-collapse: collapse;
+    width: 100%;
+    //
+    td, th {
+        border: 2px solid #666;
+        padding: 10px;
     }
 }
